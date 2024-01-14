@@ -1,0 +1,19 @@
+{
+  "name": "manga-screen-shotter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "puppeteer": "^21.7.0",
+    "timer-node": "^5.0.7",
+    "zip-a-folder": "^3.1.5"
+  }
+}
