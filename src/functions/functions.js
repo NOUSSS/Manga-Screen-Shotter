@@ -28,12 +28,6 @@ export default {
     return url;
   },
 
-  getName: (url) => {
-    const urlFormated = url.replace(/^(https?:\/\/)/, "");
-
-    return urlFormated.split("/")[0].split(".")[0];
-  },
-
   print: {
     error: (txt) => middlePrint(`(` + "-".red + ") " + txt),
     valid: (txt) => middlePrint(`(` + "+".green + ") " + txt),

@@ -2,7 +2,7 @@ import "colors";
 
 import puppeteer from "puppeteer";
 import fs from "fs";
-import text from "./functions/ascii.js";
+import ascii from "./functions/ascii.js";
 import Web from "./Site/Web.js";
 
 import { zip } from "zip-a-folder";
@@ -10,12 +10,19 @@ import { Timer } from "timer-node";
 
 import * as functions from "./functions/functions.js";
 
-const { prompt, formatURL, print, getName, intParse } = functions.default;
+const { prompt, formatURL, print } = functions.default;
 
 const scraper = new Web();
 const timer = new Timer({ label: "test-timer" });
 
 (async () => {
+  print.info(
+    "Exemple d'URL (pour One Piece) : https://anime-sama.fr/catalogue/one-piece/scan/vf/"
+      .grey
+  );
+
+  console.log("\n");
+
   const scans = await prompt(
     "Quels scans voulez vous télécharger (pris en compte: anime-sama) ? "
   );
@@ -24,7 +31,7 @@ const timer = new Timer({ label: "test-timer" });
   const page = await browser.newPage();
 
   console.clear();
-  console.log(text.text);
+  console.log(ascii.text);
 
   print.info(`Connexion à ${formatURL(scans)} en cours...`);
 
