@@ -1,3 +1,1 @@
-@echo off
-echo Installation des modules npm...
 npm i | node .
