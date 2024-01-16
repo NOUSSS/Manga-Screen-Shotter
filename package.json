@@ -12,6 +12,7 @@
   "type": "module",
   "dependencies": {
     "colors": "^1.4.0",
+    "figlet": "^1.7.0",
     "puppeteer": "^21.7.0",
     "timer-node": "^5.0.7",
     "zip-a-folder": "^3.1.5"

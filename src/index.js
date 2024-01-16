@@ -2,9 +2,9 @@ import "colors";
 
 import puppeteer from "puppeteer";
 import fs from "fs";
-import ascii from "./functions/ascii.js";
 import Web from "./Site/Web.js";
 
+import { ascii } from "./functions/ascii.js";
 import { zip } from "zip-a-folder";
 import { Timer } from "timer-node";
 
@@ -31,7 +31,7 @@ const timer = new Timer({ label: "test-timer" });
   const page = await browser.newPage();
 
   console.clear();
-  console.log(ascii.text);
+  await ascii();
 
   print.info(`Connexion à ${formatURL(scans)} en cours...`);
 
@@ -117,7 +117,6 @@ const timer = new Timer({ label: "test-timer" });
     await scraper.newChapter(chapter, page);
 
     const chapterTitle = await scraper.getChapterTitle(
-      name,
       chapter,
       allChapters,
       page
