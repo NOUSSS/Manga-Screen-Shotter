@@ -1,6 +1,6 @@
 import AnimeSama from "./anime-sama.js";
 
-class Web {
+export class Web {
   constructor() {
     this.animesama = {
       getAllChapters: AnimeSama.getAllChapters,
@@ -26,5 +26,3 @@ class Web {
     return this.animesama.getChapterTitle(page, chapter, allChapters);
   }
 }
-
-export default Web;

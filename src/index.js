@@ -2,15 +2,12 @@ import "colors";
 
 import puppeteer from "puppeteer";
 import fs from "fs";
-import Web from "./Site/Web.js";
 
+import { Web } from "./Site/Web.js";
 import { ascii } from "./functions/ascii.js";
 import { zip } from "zip-a-folder";
 import { Timer } from "timer-node";
-
-import * as functions from "./functions/functions.js";
-
-const { prompt, formatURL, print } = functions.default;
+import { prompt, formatURL, print } from "./functions/functions.js";
 
 const scraper = new Web();
 const timer = new Timer({ label: "test-timer" });

@@ -1,38 +1,36 @@
 import "colors";
 
-export default {
-  prompt: (ask) =>
-    new Promise((res) => {
-      process.stdin.resume();
+export const prompt = (ask) =>
+  new Promise((res) => {
+    process.stdin.resume();
 
-      const terminalWidth = process.stdout.columns;
-      const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
-      const positionedText = " ".repeat(startPosition) + ask;
+    const terminalWidth = process.stdout.columns;
+    const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
+    const positionedText = " ".repeat(startPosition) + ask;
 
-      process.stdout.write(positionedText);
+    process.stdout.write(positionedText);
 
-      process.stdin.on("data", (response) => {
-        process.stdin.pause();
+    process.stdin.on("data", (response) => {
+      process.stdin.pause();
 
-        res(response.toString().trim());
-      });
-    }),
+      res(response.toString().trim());
+    });
+  });
 
-  formatURL: (url) => {
-    const premierSlashIndex = url.indexOf("/", url.indexOf("//") + 2);
+export const formatURL = (url) => {
+  const premierSlashIndex = url.indexOf("/", url.indexOf("//") + 2);
 
-    if (premierSlashIndex !== -1) {
-      return url.substring(0, premierSlashIndex);
-    }
+  if (premierSlashIndex !== -1) {
+    return url.substring(0, premierSlashIndex);
+  }
 
-    return url;
-  },
+  return url;
+};
 
-  print: {
-    error: (txt) => middlePrint(`(` + "-".red + ") " + txt),
-    valid: (txt) => middlePrint(`(` + "+".green + ") " + txt),
-    info: (txt) => middlePrint(`(` + "*".cyan + ") " + txt),
-  },
+export const print = {
+  error: (txt) => middlePrint(`(` + "-".red + ") " + txt),
+  valid: (txt) => middlePrint(`(` + "+".green + ") " + txt),
+  info: (txt) => middlePrint(`(` + "*".cyan + ") " + txt),
 };
 
 function middlePrint(text, len = false) {
