@@ -18,10 +18,10 @@ $ npm i
 $ node .
 ```
 
-## Informations en plus
+## Informations
 
 - Si vous trouvez des problèmes, contactez moi sur discord : noussss
 
-## Example
+# Exemple
 
 ![presentation.png](https://media.discordapp.net/attachments/804451126921134081/1196906163455918090/PRESENTATION.png)
