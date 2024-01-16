@@ -4,11 +4,7 @@ export const prompt = (ask) =>
   new Promise((res) => {
     process.stdin.resume();
 
-    const terminalWidth = process.stdout.columns;
-    const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
-    const positionedText = " ".repeat(startPosition) + ask;
-
-    process.stdout.write(positionedText);
+    middlePrint(ask, true);
 
     process.stdin.on("data", (response) => {
       process.stdin.pause();
@@ -33,11 +29,20 @@ export const print = {
   info: (txt) => middlePrint(`(` + "*".cyan + ") " + txt),
 };
 
-function middlePrint(text) {
-  const terminalWidth = process.stdout.columns;
-  const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
+function middlePrint(text, usingProcess = false) {
+  if (usingProcess) {
+    const terminalWidth = process.stdout.columns;
+    const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
 
-  const positionedText = " ".repeat(startPosition) + text;
+    const positionedText = " ".repeat(startPosition) + text;
 
-  console.log(positionedText);
+    process.stdout.write(positionedText);
+  } else {
+    const terminalWidth = process.stdout.columns;
+    const startPosition = Math.max(0, Math.floor(terminalWidth / 3));
+
+    const positionedText = " ".repeat(startPosition) + text;
+
+    console.log(positionedText);
+  }
 }
