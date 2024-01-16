@@ -101,6 +101,8 @@ const timer = new Timer({ label: "test-timer" });
   console.log("\n");
 
   if (!fs.existsSync("src/Manga/" + title) || !fs.existsSync("src/Manga/")) {
+    fs.mkdirSync("src/Manga");
+
     fs.mkdirSync("src/Manga/" + title);
     fs.mkdirSync("src/Manga/" + title + "/chapters");
   }
