@@ -7,7 +7,7 @@
 #### 1・Installation automatique
 
 ```
-Lancez le "setup.bat", une fois cela fait ça installera les modules et lancera le programme
+Lancez le "install.bat", une fois fini, lancez le "start.bat"
 ```
 
 #### 2・Installation manuelle
