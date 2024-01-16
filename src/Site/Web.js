@@ -1,4 +1,4 @@
-import AnimeSama from "./anime-sama.js";
+import * as AnimeSama from "./anime-sama.js";
 
 export class Web {
   constructor() {
